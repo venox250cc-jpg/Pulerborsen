@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <title>Pulverbörsen – Återbruk av pulverfärg</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <style>
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f3f4f6;
+      color: #111827;
+    }
+    header {
+      background: #111827;
+      color: white;
+      padding: 16px 24px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 1.6rem;
+    }
+    header p {
+      margin: 8px 0 0;
+      font-size: 0.95rem;
+      opacity: 0.9;
+    }
+    main {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px;
+    }
+    .section {
+      margin-bottom: 24px;
+      background: white;
+      border-radius: 12px;
+      padding: 16px 18px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+    }
+    .section h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      margin-bottom: 8px;
+    }
+    .section p {
+      margin-top: 0;
+      font-size: 0.95rem;
+      color: #4b5563;
+    }
+    .listings {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    .card {
+      border-radius: 10px;
+      border: 1px solid #e5e7eb;
+      padding: 12px 14px;
+      background: #f9fafb;
+    }
+    .card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 6px;
+    }
+    .badge {
+      font-size: 0.7rem;
+      padding: 3px 8px;
+      border-radius: 999px;
+      background: #e5e7eb;
+      color: #374151;
+    }
+    .title {
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .meta {
+      font-size: 0.8rem;
+      color: #6b7280;
+      margin-top: 2px;
+    }
+    .key-value {
+      font-size: 0.85rem;
+      margin-top: 4px;
+    }
+    .key-value span {
+      font-weight: 600;
+      color: #374151;
+    }
+    .tag-row {
+      margin-top: 6px;
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 7px;
+      border-radius: 999px;
+      border: 1px solid #e5e7eb;
+      margin-right: 4px;
+      margin-bottom: 2px;
+    }
+    .co2 {
+      font-size: 0.8rem;
+      color: #047857;
+      margin-top: 4px;
+    }
+    .contact-box {
+      margin-top: 8px;
+      font-size: 0.9rem;
+    }
+    .contact-box strong {
+      display: block;
+      margin-bottom: 3px;
+    }
+    .highlight {
+      font-weight: 600;
+      color: #111827;
+    }
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #9ca3af;
+      padding: 12px;
+    }
+    .form {
+      margin-top: 12px;
+      max-width: 420px;
+      display: grid;
+      gap: 10px;
+    }
+    .form-row {
+      display: grid;
+      gap: 4px;
+      font-size: 0.9rem;
+    }
+    .form-row label {
+      font-weight: 500;
+      color: #374151;
+    }
+    .form-row input,
+    .form-row textarea,
+    .form-row select {
+      padding: 7px 9px;
+      border-radius: 8px;
+      border: 1px solid #d1d5db;
+      font-size: 0.9rem;
+      font-family: inherit;
+    }
+    .form-row textarea {
+      min-height: 70px;
+      resize: vertical;
+    }
+    .form-row small {
+      font-size: 0.75rem;
+      color: #6b7280;
+    }
+    .button {
+      margin-top: 4px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: none;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      background: #111827;
+      color: white;
+    }
+    .button:hover {
+      opacity: 0.9;
+    }
+    .status {
+      font-size: 0.85rem;
+      color: #6b7280;
+      margin-top: 4px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Pulverbörsen</h1>
+    <p>Marknadsplats för överbliven pulverlack – spara pengar & CO₂</p>
+  </header>
+
+  <main>
+    <section class="section">
+      <h2>Vad är Pulverbörsen?</h2>
+      <p>
+        Pulverbörsen är en enkel marknadsplats där lackerare, verkstäder och tillverkare kan köpa och sälja
+        överbliven pulverfärg istället för att kasta den. Det sparar både pengar och klimatpåverkan.
+      </p>
+      <p style="margin-top:6px;">
+        <span class="highlight">Det här är en första skarp version</span> där vi redan kan lägga upp riktiga partier
+        ur lagret och ta emot förfrågningar.
+      </p>
+      <div style="margin-top:10px; padding:10px 12px; border-radius:10px; background:#ecfdf3; font-size:0.9rem; color:#14532d;">
+        <strong>Klimatvinst i korthet:</strong><br>
+        När 20 kg pulverfärg får nytt liv istället för att skrotas kan det grovt motsvara
+        25–50 kg CO₂ som aldrig behöver produceras. I senare versioner kopplar vi på mer exakta siffror per kulör och mängd.
+      </div>
+    </section>
+
+    <section class="section">
+      <h2>Tillgängliga partier</h2>
+      <p class="status" id="listings-status">Hämtar lagret…</p>
+      <div class="listings" id="listings"></div>
+    </section>
+
+    <section class="section">
+      <h2>Förfrågan / intresseanmälan</h2>
+      <p>
+        Fyll i formuläret nedan så skapas ett mail till oss med dina uppgifter.
+        Vi återkommer med förslag, pris och kan använda informationen som underlag för offert/faktura.
+      </p>
+
+      <form class="form"
+            action="mailto:info@pulverborsen.se?subject=Intresse%20Pulverbörsen"
+            method="POST"
+            enctype="text/plain">
+        <div class="form-row">
+          <label for="företag">Företag</label>
+          <input id="företag" name="Foretag" required />
+        </div>
+
+        <div class="form-row">
+          <label for="kontaktperson">Kontaktperson</label>
+          <input id="kontaktperson" name="Kontaktperson" required />
+        </div>
+
+        <div class="form-row">
+          <label for="epost">E-post</label>
+          <input id="epost" name="Epost" type="email" required />
+        </div>
+
+        <div class="form-row">
+          <label for="telefon">Telefon</label>
+          <input id="telefon" name="Telefon" />
+        </div>
+
+        <div class="form-row">
+          <label for="orgnr">Org.nr</label>
+          <input id="orgnr" name="Orgnr" />
+        </div>
+
+        <div class="form-row">
+          <label for="intresse">Jag vill helst</label>
+          <select id="intresse" name="Intresse">
+            <option value="sälja">Sälja överbliven pulverfärg</option>
+            <option value="köpa">Köpa pulverfärg</option>
+            <option value="både">Både sälja och köpa</option>
+          </select>
+        </div>
+
+        <div class="form-row">
+          <label for="beskrivning">Kort beskrivning</label>
+          <textarea id="beskrivning" name="Beskrivning"
+                    placeholder="T.ex. typ av kulörer, mängder, ungefärlig volym per år, ev. referens till parti i listan."></textarea>
+          <small>Texten klistras in i mailet som skickas till oss.</small>
+        </div>
+
+        <button type="submit" class="button">Skicka intresse (via e-post)</button>
+      </form>
+
+      <div class="contact-box">
+        <strong>Vill du hellre skriva direkt?</strong>
+        <div>
+          Mejla: <a href="mailto:info@pulverborsen.se?subject=Pulverbörsen%20förfrågan">info@pulverborsen.se</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    Pulverbörsen – återbruk av pulverfärg. Den här versionen använder lager.csv som underlag.
+  </footer>
+
+  <script>
+    // Läs lager från lokal fil lager.csv (som ligger i samma mapp som index.html)
+    const SHEET_URL = "lager.csv";
+
+    async function loadListings() {
+      const statusEl = document.getElementById('listings-status');
+      const container = document.getElementById('listings');
+
+      // Om du öppnar filen direkt (file://) kan vi inte läsa lager.csv – funkar bara på Netlify/server
+      if (location.protocol === 'file:') {
+        statusEl.textContent = "Lagret visas inte i denna lokala vy. Ladda upp mappen till Netlify och öppna sidan via länken där.";
+        return;
+      }
+
+      try {
+        const res = await fetch(SHEET_URL);
+        if (!res.ok) {
+          throw new Error("HTTP " + res.status);
+        }
+
+        const text = await res.text();
+
+        const lines = text.trim().split(/\r?\n/);
+        if (lines.length <= 1) {
+          statusEl.textContent = "Inga partier i lagret ännu.";
+          return;
+        }
+
+        const rows = lines.map(line => line.split(','));
+        const header = rows[0].map(h => h.replace(/^"|"$/g, '').trim());
+
+        const idxContains = (substr) =>
+          header.findIndex(h => h.toLowerCase().includes(substr.toLowerCase()));
+
+        const col = {
+          aktiv:    idxContains("aktiv"),
+          ral:      idxContains("ral"),
+          kulor:    idxContains("kulör"),
+          typ:      idxContains("typ"),
+          yta:      idxContains("yta"),
+          mangd:    idxContains("mängd"),
+          glans:    idxContains("glans"),
+          plats:    idxContains("plats"),
+          pris:     idxContains("pris"),
+          notering: idxContains("notering"),
+          co2:      idxContains("co2")
+        };
+
+        let html = "";
+        let countActive = 0;
+
+        for (let r = 1; r < rows.length; r++) {
+          const row = rows[r];
+
+          const get = (i) =>
+            (i >= 0 && i < row.length)
+              ? row[i].replace(/^"|"$/g, "").trim()
+              : "";
+
+          const aktiv = get(col.aktiv).toLowerCase();
+
+          // Visa bara rader där Aktiv innehåller ja / 1 / x
+          if (!aktiv || (!aktiv.includes("ja") && !aktiv.includes("1") && !aktiv.includes("x"))) {
+            continue;
+          }
+
+          countActive++;
+
+          const ral      = get(col.ral);
+          const kulor    = get(col.kulor);
+          const typ      = get(col.typ);
+          const yta      = get(col.yta);
+          const mangd    = get(col.mangd);
+          const glans    = get(col.glans);
+          const plats    = get(col.plats);
+          const pris     = get(col.pris);
+          const notering = get(col.notering);
+          const co2      = get(col.co2);
+
+          const title = (ral || kulor)
+            ? `RAL ${ral || ""} – ${kulor || ""}`.replace("RAL  – ", kulor || "")
+            : (kulor || "Pulverparti");
+
+          const metaParts = [typ, yta, glans].filter(Boolean);
+          const meta = metaParts.join(" • ");
+
+          html += `
+            <article class="card">
+              <div class="card-header">
+                <div class="title">${title}</div>
+                <div class="badge">Till salu</div>
+              </div>
+              <div class="meta">${meta || ""}</div>
+              ${mangd ? `<div class="key-value"><span>Mängd:</span> ${mangd} kg</div>` : ""}
+              ${plats ? `<div class="key-value"><span>Plats:</span> ${plats}</div>` : ""}
+              ${pris ? `<div class="key-value"><span>Pris:</span> ${pris} kr/kg</div>` : ""}
+              ${notering ? `<div class="tag-row"><span class="tag">${notering}</span></div>` : ""}
+              ${co2 ? `<div class="co2">${co2}</div>` : ""}
+              <div style="margin-top:8px; font-size:0.8rem;">
+                <a href="mailto:info@pulverborsen.se?subject=Förfrågan%20Pulverparti%20${encodeURIComponent(title)}">
+                  Skicka förfrågan om just detta parti
+                </a>
+              </div>
+            </article>
+          `;
+        }
+
+        if (countActive === 0) {
+          statusEl.textContent = "Inga aktiva partier inlagda ännu – lagret fylls på löpande.";
+          container.innerHTML = "";
+        } else {
+          statusEl.textContent = `Visar ${countActive} aktiva partier ur lagret.`;
+          container.innerHTML = html;
+        }
+      } catch (err) {
+        console.error(err);
+        statusEl.textContent = "Tekniskt fel när lagret skulle hämtas: " + (err.message || err);
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', loadListings);
+  </script>
+</body>
+</html>
