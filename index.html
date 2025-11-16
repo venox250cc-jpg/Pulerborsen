@@ -175,7 +175,7 @@
     </section>
   </div>
 
-  <script>
+   <script>
     const listingsEl = document.getElementById("listings");
     const countEl = document.getElementById("count");
     const searchInput = document.getElementById("search");
@@ -228,7 +228,7 @@
       return clean ? clean + " kr/kg" : "Enligt överenskommelse";
     }
 
-        function renderList(items) {
+    function renderList(items) {
       listingsEl.innerHTML = "";
       if (!items.length) {
         countEl.textContent = "Inga partier matchar din sökning.";
@@ -296,6 +296,7 @@
       });
     }
 
+    function applySearch() {
       const q = searchInput.value.trim().toLowerCase();
       if (!q) {
         renderList(allItems);
@@ -321,8 +322,10 @@
         countEl.textContent = "Kunde inte läsa in lagret just nu.";
       });
   </script>
+
 </body>
 </html>
+
 
 
 
