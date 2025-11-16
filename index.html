@@ -188,21 +188,25 @@
     </section>
   </div>
 
-   <script>
+     <script>
     const listingsEl = document.getElementById("listings");
     const countEl = document.getElementById("count");
     const searchInput = document.getElementById("search");
 
-    let allItems = [];
+    const PAGE_SIZE = 20; // hur många partier som visas åt gången
 
-    // Din CSV har just nu kolumnerna:
+    let allItems = [];
+    let visibleItems = [];  // nuvarande filtrerade lista
+    let visibleCount = 0;   // hur många av dem som visas just nu
+
+    // Din CSV har kolumnerna:
     // 0: Aktiv (ja/nej)
     // 1: RAL/NCS
     // 2: Kulör
     // 3: Typ
-    // 4: Yt/Struktu(r)
+    // 4: Yt/Struktur
     // 5: Mängd
-    // 6: Glans/ma
+    // 6: Glans
     // 7: Plats
     // 8: Pris_kr_kg
     // 9: Notering
@@ -241,16 +245,22 @@
       return clean ? clean + " kr/kg" : "Enligt överenskommelse";
     }
 
-    function renderList(items) {
+    // Renderar nuvarande sida (visibleItems + visibleCount)
+    function renderPage() {
       listingsEl.innerHTML = "";
-      if (!items.length) {
+
+      if (!visibleItems.length) {
         countEl.textContent = "Inga partier matchar din sökning.";
         return;
       }
 
-      countEl.textContent = `Visar ${items.length} aktivt part${items.length === 1 ? "i" : "ier"} ur lagret.`;
+      // totalt antal matchande, inte bara de som visas
+      countEl.textContent = `Visar ${visibleItems.length} aktivt part${visibleItems.length === 1 ? "i" : "ier"} ur lagret.`;
 
-      items.forEach(item => {
+      const limit = Math.min(visibleCount, visibleItems.length);
+
+      for (let i = 0; i < limit; i++) {
+        const item = visibleItems[i];
         const div = document.createElement("div");
         div.className = "listing";
 
@@ -306,29 +316,57 @@
           </a>
         `;
         listingsEl.appendChild(div);
-      });
+      }
+
+      // Om det finns fler än vi visar: lägg en "Visa fler partier"-knapp
+      if (visibleCount < visibleItems.length) {
+        const btn = document.createElement("button");
+        btn.textContent = "Visa fler partier";
+        btn.style.marginTop = "0.75rem";
+        btn.style.padding = "0.4rem 0.8rem";
+        btn.style.borderRadius = "999px";
+        btn.style.border = "1px solid #d1d5db";
+        btn.style.background = "#ffffff";
+        btn.style.cursor = "pointer";
+        btn.style.fontSize = "0.9rem";
+
+        btn.addEventListener("click", () => {
+          visibleCount += PAGE_SIZE;
+          renderPage();
+        });
+
+        const wrapper = document.createElement("div");
+        wrapper.style.display = "flex";
+        wrapper.style.justifyContent = "center";
+        wrapper.appendChild(btn);
+        listingsEl.appendChild(wrapper);
+      }
     }
 
     function applySearch() {
       const q = searchInput.value.trim().toLowerCase();
       if (!q) {
-        renderList(allItems);
-        return;
+        visibleItems = allItems.slice();
+      } else {
+        visibleItems = allItems.filter(item =>
+          [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering]
+            .some(v => (v || "").toLowerCase().includes(q))
+        );
       }
-      const filtered = allItems.filter(item =>
-        [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering]
-          .some(v => (v || "").toLowerCase().includes(q))
-      );
-      renderList(filtered);
+      visibleCount = PAGE_SIZE;
+      renderPage();
     }
 
     searchInput.addEventListener("input", applySearch);
 
+    // Ladda lagret
     fetch("lager.csv?" + Date.now())
       .then(r => r.text())
       .then(text => {
         allItems = parseCSV(text);
-        renderList(allItems);
+        visibleItems = allItems.slice();
+        visibleCount = PAGE_SIZE;
+        renderPage();
       })
       .catch(err => {
         console.error(err);
@@ -336,8 +374,10 @@
       });
   </script>
 
+
 </body>
 </html>
+
 
 
 
