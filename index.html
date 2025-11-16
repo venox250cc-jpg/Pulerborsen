@@ -228,7 +228,7 @@
       return clean ? clean + " kr/kg" : "Enligt överenskommelse";
     }
 
-    function renderList(items) {
+        function renderList(items) {
       listingsEl.innerHTML = "";
       if (!items.length) {
         countEl.textContent = "Inga partier matchar din sökning.";
@@ -249,6 +249,35 @@
         const typYta = [item.typ, item.yt].filter(Boolean).join(", ");
         const co2Text = item.co2 ? `Ca ${item.co2} kg CO₂ sparat` : "";
 
+        const subject = `Beställning Pulverbörsen – ${title}`;
+        const bodyLines = [
+          "Hej!",
+          "",
+          "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
+          "",
+          `- RAL/kulör: ${title}`,
+          `- Mängd: ${formatKg(item.mangd)}`,
+          `- Plats: ${item.plats || "-"}`,
+          `- Pris: ${formatPris(item.pris)}`,
+          "",
+          "Mina fakturauppgifter (köpare):",
+          "Företag:",
+          "Organisationsnummer:",
+          "Fakturaadress:",
+          "Fakturamottagare / referens:",
+          "Faktura-e-post:",
+          "",
+          "Leveransadress:",
+          "Kontaktperson:",
+          "Telefon:",
+          "",
+          "Övrig info:",
+          "",
+          "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
+        ];
+
+        const mailto = `mailto:erik@jsblack.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
         div.innerHTML = `
           <div class="listing-header">
             <div class="listing-title">${title}</div>
@@ -259,15 +288,14 @@
           <div class="listing-row"><span>Typ / yta / glans:</span> ${[typYta, item.glans].filter(Boolean).join(" – ") || "–"}</div>
           <div class="listing-row"><span>Pris:</span> ${formatPris(item.pris)}</div>
           ${co2Text ? `<div class="listing-row"><span>CO₂ (grov uppskattning):</span> ${co2Text}</div>` : ""}
-          <a class="cta-link" href="mailto:DIN-MAIL@DIN-DOMÄN.SE?subject=Förfrågan%20Pulverbörsen%20${encodeURIComponent(title)}">
-            Skicka förfrågan om just detta parti
+          <a class="cta-link" href="${mailto}">
+            Köp det här partiet
           </a>
         `;
         listingsEl.appendChild(div);
       });
     }
 
-    function applySearch() {
       const q = searchInput.value.trim().toLowerCase();
       if (!q) {
         renderList(allItems);
@@ -295,6 +323,7 @@
   </script>
 </body>
 </html>
+
 
 
 
