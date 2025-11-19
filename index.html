@@ -199,7 +199,7 @@
 
     <section class="card">
       <h2>Tillgängliga partier</h2>
-      <p class="list-meta">Priser anges exl. moms (25 %) om inget annat anges.</p>
+      <p class="list-meta">Priser anges exkl. moms (25 %) om inget annat anges.</p>
       <p id="count" class="list-meta">Laddar lagret…</p>
 
       <div class="search-row">
@@ -324,6 +324,7 @@
     // 10: Pris_kr_kg
     // 11: Notering
     // 12: CO2_text
+    // 13: id nr (NY)
     function parseCSV(text) {
       const rows = text.trim().split(/\r?\n/).filter(r => r.trim() !== "");
       if (rows.length <= 1) return [];
@@ -343,7 +344,8 @@
           plats:    cols[9]  || "",
           pris:     cols[10] || "",
           notering: cols[11] || "",
-          co2:      cols[12] || ""
+          co2:      cols[12] || "",
+          idnr:     cols[13] || ""   // läser in ditt id
         };
       }).filter(item => !item.aktiv || item.aktiv.toLowerCase() === "ja");
     }
@@ -405,12 +407,15 @@
           totalLine = `<div class="listing-row"><span>Pris totalt (hela partiet):</span> ca ${total} kr</div>`;
         }
 
-        const subject = `Beställning Pulverbörsen – ${title}`;
+        const idSuffix = item.idnr ? ` (ID ${item.idnr})` : "";
+        const subject = `Beställning Pulverbörsen – ${title}${idSuffix}`;
+
         const bodyLines = [
           "Hej!",
           "",
           "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
           "",
+          item.idnr ? `- ID: ${item.idnr}` : "",
           `- Fabrikat: ${item.fabrikat || "-"}`,
           `- RAL/kulör: ${title}`,
           `- Typ: ${item.typ || "-"}`,
@@ -438,7 +443,7 @@
           "Övrig info:",
           "",
           "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
-        ];
+        ].filter(Boolean); // tar bort ev. tom rad om ID saknas
 
         const mailto = `mailto:order@pulverborsen.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
 
@@ -447,6 +452,7 @@
             <div class="listing-title">${title}</div>
             <div class="listing-label">Till salu</div>
           </div>
+          <div class="listing-row"><span>Parti-ID:</span> ${item.idnr || "–"}</div>
           <div class="listing-row"><span>Fabrikat:</span> ${item.fabrikat || "–"}</div>
           <div class="listing-row"><span>Plats:</span> ${item.plats || "–"}</div>
           <div class="listing-row"><span>Mängd:</span> ${formatKg(item.mangd)}</div>
@@ -495,7 +501,7 @@
         visibleItems = allItems.slice();
       } else {
         visibleItems = allItems.filter(item =>
-          [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering]
+          [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering, item.idnr]
             .some(v => (v || "").toLowerCase().includes(q))
         );
       }
@@ -521,4 +527,3 @@
   </script>
 </body>
 </html>
-
