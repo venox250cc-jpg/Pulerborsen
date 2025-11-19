@@ -1,73 +1,27 @@
 ﻿Aktiv (ja/nej);Fabrikat;RAL/NCS;Kulör;Typ;Bäst före datum;Yt/Struktur;Mängd;Glans/matt;Plats;Pris_kr_kg;Notering;CO2_text
-ja;intrepon;NCS;5040 Y80R;Polyester TGIC Free;2019;;8,5;80-90;Eskisltuna;;;
-ja;intrepon;NCS ;S 0502Y;Polyester TGIC Free;2022;;19,6;30;Eskisltuna;;;
-ja;intrepon;NCS;S 2010 G60Y;Polyester TGIC Free;2021;;10,8;80-90;Eskisltuna;;;
-ja;intrepon;NCS;S 2010 G60Y;Polyester TGIC Free;2021;;19,8;80-90;Eskisltuna;;;
-ja;Axalta;Alesta AP;February 1 Metallic;;2018;Fin Struktur;13,8;5;Eskisltuna;;;
-ja;Axalta;Alesta EP;Ultra chrome silver;indoor;2025;;19,8;Visual;Eskisltuna;;;
-ja;Axalta;Alesta EP;ICA Grey;indoor;2023;Leatherette SL-3;20;Gloss;Eskisltuna;;;
-ja;Axalta;Alesta SD;Volvo 1717;SD Industrial;Industrial;;20;35;Eskisltuna;;;
-ja;Interpon;NCS;S 2500 N;Polyester TGIC Free;2020;;24;84;Eskisltuna;;;
-ja;Interpon;NCS;S 2020 R90B;Polyester TGIC Free;2020;;25;89-90;Eskisltuna;;;
-ja;Interpon;NCS;S 2020 Y70R;Polyester TGIC Free;2020;;25;25-35;Eskisltuna;;;
-ja;Interpon;NCS;S 2020 Y70R;Polyester TGIC Free;2020;;24;25-35;Eskisltuna;;;
-ja;Interpon;NCS;S 3010 G60Y;Polyester TGIC Free;2021;;22,7;80-90;Eskisltuna;;;
-ja;Interpon;NCS;S 3010 G60Y;Polyester TGIC Free;2021;;15,4;80-90;Eskisltuna;;;
-ja;Interpon;NCS;S 9000N;Polyester TGIC Free;2025;;14,7;84;Eskisltuna;;;
-ja;Teknos;NCS;S 2010-R80B;EP;2011;;10;60;Eskisltuna;;;
-ja;Interpon;NCS;S 80500 N;Polyester TGIC Free;2019;;10;30;Eskisltuna;;;
-ja;Interpon;NCS;S 5500 N;Polyester TGIC Free;2016;;12;85;Eskisltuna;;;
-ja;Teknos;NCS;S 4050-R80B;EP;2011;;14,8;60;Eskisltuna;;;
-ja;Interpon;NCS;S 1000N(Blanc 748);Polyester TGIC Free;2016;;25;85;Eskisltuna;;;
-ja;Interpon;NCS;0500-N(Blanc 747);Polyester TGIC Free;2023;;11;30;Eskisltuna;;;
-ja;Interpon;NCS;S 5010 G70Y;Polyester TGIC Free;?;;13;85;Eskisltuna;;;
-ja;Interpon;NCS;S 0502Y;Polyester TGIC Free;2019;;8,7;30;Eskisltuna;;;
-ja;Axalta;;Brokk Yellow;Outdoor IP;2023;;15;90;Eskisltuna;;;
-ja;Axalta;;Black FXT AQP;Outdoor IP;2021;;18;6;Eskisltuna;;;
+ja;intrepon;NCS;5040 Y80R;Polyester TGIC Free;2019;;8,5;80-90;Eskisltuna;30;Dålig kartong;17
+ja;intrepon;NCS ;S 0502Y;Polyester TGIC Free;2022;;19,6;30;Eskisltuna;30;dålig kartong;39
+ja;intrepon;NCS;S 2010 G60Y;Polyester TGIC Free;2021;;10,8;80-90;Eskisltuna;30;;20
+ja;intrepon;NCS;S 2010 G60Y;Polyester TGIC Free;2021;;19,8;80-90;Eskisltuna;30;;38
+ja;Axalta;Alesta AP;February 1 Metallic;;2018;Fin Struktur;13,8;5;Eskisltuna;20;;25
+ja;Axalta;Alesta EP;Ultra chrome silver;indoor;2025;;19,8;Visual;Eskisltuna;20;;38
+ja;Axalta;Alesta EP;ICA Grey;indoor;2023;Leatherette SL-3;20;Gloss;Eskisltuna;40;;40
+ja;Axalta;Alesta SD;Volvo 1717;SD Industrial;Industrial;;20;35;Eskisltuna;45;;20
+ja;Interpon;NCS;S 2500 N;Polyester TGIC Free;2020;;24;84;Eskisltuna;54;;48
+ja;Interpon;NCS;S 2020 R90B;Polyester TGIC Free;2020;;25;89-90;Eskisltuna;54;;48
+ja;Interpon;NCS;S 2020 Y70R;Polyester TGIC Free;2020;;25;25-35;Eskisltuna;54;;48
+ja;Interpon;NCS;S 2020 Y70R;Polyester TGIC Free;2020;;24;25-35;Eskisltuna;54;;46
+ja;Interpon;NCS;S 3010 G60Y;Polyester TGIC Free;2021;;22,7;80-90;Eskisltuna;40;;43
+ja;Interpon;NCS;S 3010 G60Y;Polyester TGIC Free;2021;;15,4;80-90;Eskisltuna;40;;30
+ja;Interpon;NCS;S 9000N;Polyester TGIC Free;2025;;14,7;84;Eskisltuna;80;;28
+ja;Teknos;NCS;S 2010-R80B;EP;2011;;10;60;Eskisltuna;30;;20
+ja;Interpon;NCS;S 80500 N;Polyester TGIC Free;2019;;10;30;Eskisltuna;35;;200
+ja;Interpon;NCS;S 5500 N;Polyester TGIC Free;2016;;12;85;Eskisltuna;40;;23
+ja;Teknos;NCS;S 4050-R80B;EP;2011;;14,8;60;Eskisltuna;35;;26
+ja;Interpon;NCS;S 1000N(Blanc 748);Polyester TGIC Free;2016;;25;85;Eskisltuna;40;;48
+ja;Interpon;NCS;0500-N(Blanc 747);Polyester TGIC Free;2023;;11;30;Eskisltuna;40;;20
+ja;Interpon;NCS;S 5010 G70Y;Polyester TGIC Free;?;;13;85;Eskisltuna;25;;25
+ja;Interpon;NCS;S 0502Y;Polyester TGIC Free;2019;;8,7;30;Eskisltuna;45;;16
+ja;Axalta;;Brokk Yellow;Outdoor IP;2023;;15;90;Eskisltuna;30;;30
+ja;Axalta;;Black FXT AQP;Outdoor IP;2021;;18;6;Eskisltuna;45;;36
 ja;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
-;;;;;;;;;;;;
