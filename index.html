@@ -342,6 +342,16 @@ p {
     const clean = String(value).replace(/[^\d.,]/g, "");
     return clean ? clean + " kr/kg" : "Enligt överenskommelse";
   }
+function parseNumber(value) {
+  if (value === null || value === undefined) return null;
+  const clean = String(value)
+    .replace(/\s/g, "")      // ta bort mellanslag
+    .replace(",", ".")       // ersätt komma med punkt
+    .replace(/[^\d.]/g, ""); // ta bort allt som inte är siffra eller punkt
+
+  const num = parseFloat(clean);
+  return isNaN(num) ? null : num;
+}
 
   // Renderar nuvarande sida (visibleItems + visibleCount)
   function renderPage() {
@@ -368,6 +378,14 @@ p {
 
       const typYta = [item.typ, item.yt].filter(Boolean).join(", ");
       const co2Text = item.co2 ? `Ca ${item.co2} kg CO₂ sparat` : "";
+const mangdNum = parseNumber(item.mangd);
+const prisNum = parseNumber(item.pris);
+let totalLine = "";
+
+if (mangdNum !== null && prisNum !== null) {
+  const total = Math.round(mangdNum * prisNum);
+  totalLine = `<div class="listing-row"><span>Pris totalt (hela partiet):</span> ca ${total} kr</div>`;
+}
 
       const subject = `Beställning Pulverbörsen – ${title}`;
       const bodyLines = [
@@ -401,23 +419,25 @@ p {
 
       const mailto = `mailto:order@pulverborsen.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
 
-      div.innerHTML = `
-        <div class="listing-header">
-          <div class="listing-title">${title}</div>
-          <div class="listing-label">Till salu</div>
-        </div>
-        <div class="listing-row"><span>Fabrikat:</span> ${item.fabrikat || "–"}</div>
-        <div class="listing-row"><span>Plats:</span> ${item.plats || "–"}</div>
-        <div class="listing-row"><span>Mängd:</span> ${formatKg(item.mangd)}</div>
-        <div class="listing-row"><span>Typ / yta / glans:</span> ${[typYta, item.glans].filter(Boolean).join(" – ") || "–"}</div>
-        <div class="listing-row"><span>Bäst före:</span> ${item.bastfore || "–"}</div>
-        <div class="listing-row"><span>Pris:</span> ${formatPris(item.pris)}</div>
-        ${co2Text ? `<div class="listing-row"><span>CO₂ (grov uppskattning):</span> ${co2Text}</div>` : ""}
-        ${item.notering ? `<div class="listing-row"><span>Notering:</span> ${item.notering}</div>` : ""}
-        <a class="cta-link" href="${mailto}">
-          Köp det här partiet
-        </a>
-      `;
+     div.innerHTML = `
+  <div class="listing-header">
+    <div class="listing-title">${title}</div>
+    <div class="listing-label">Till salu</div>
+  </div>
+  <div class="listing-row"><span>Fabrikat:</span> ${item.fabrikat || "–"}</div>
+  <div class="listing-row"><span>Plats:</span> ${item.plats || "–"}</div>
+  <div class="listing-row"><span>Mängd:</span> ${formatKg(item.mangd)}</div>
+  <div class="listing-row"><span>Typ / yta / glans:</span> ${[typYta, item.glans].filter(Boolean).join(" – ") || "–"}</div>
+  <div class="listing-row"><span>Bäst före:</span> ${item.bastfore || "–"}</div>
+  <div class="listing-row"><span>Pris:</span> ${formatPris(item.pris)}</div>
+  ${totalLine}
+  ${co2Text ? `<div class="listing-row"><span>CO₂ (grov uppskattning):</span> ${co2Text}</div>` : ""}
+  ${item.notering ? `<div class="listing-row"><span>Notering:</span> ${item.notering}</div>` : ""}
+  <a class="cta-link" href="${mailto}">
+    Köp det här partiet
+  </a>
+`;
+
       listingsEl.appendChild(div);
     }
 
@@ -481,6 +501,7 @@ p {
 
 </body>
 </html>
+
 
 
 
