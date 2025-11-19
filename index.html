@@ -6,83 +6,82 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <style>
     :root {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: #0b1120;      /* mörk ram runt sidan */
-  color: #111827;
-}
-body {
-  margin: 0;
-  padding: 0 1rem 3rem;
-  display: flex;
-  justify-content: center;
-  background: #0b1120;      /* samma som :root */
-}
-.page {
-  max-width: 960px;
-  width: 100%;
-}
-h1 {
-  margin-top: 1.5rem;
-  margin-bottom: 0.25rem;
-  font-size: 1.8rem;
-}
-h2 {
-  margin-top: 2rem;
-  margin-bottom: 0.5rem;
-  font-size: 1.3rem;
-}
-p {
-  line-height: 1.5;
-  margin: 0.25rem 0;
-}
-.card {
-  background: #f9fafb;      /* lite mjukare ljusgrå istället för kritvitt */
-  border-radius: 0.75rem;
-  padding: 1rem 1.25rem;
-  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.35);
-  margin-top: 1rem;
-}
-.highlight {
-  background: #022c22;      /* mörkgrön ruta */
-  border-left: 4px solid #16a34a;
-  padding: 0.75rem 0.9rem;
-  border-radius: 0.5rem;
-  margin-top: 0.75rem;
-  font-size: 0.9rem;
-  color: #ecfdf5;           /* ljus text i rutan */
-}
-.list-meta {
-  font-size: 0.9rem;
-  color: #4b5563;
-}
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: #0b1120;      /* mörk ram runt sidan */
+      color: #111827;
+    }
+    body {
+      margin: 0;
+      padding: 0 1rem 3rem;
+      display: flex;
+      justify-content: center;
+      background: #0b1120;      /* samma som :root */
+    }
+    .page {
+      max-width: 960px;
+      width: 100%;
+    }
+    h1 {
+      margin-top: 1.5rem;
+      margin-bottom: 0.25rem;
+      font-size: 1.8rem;
+    }
+    h2 {
+      margin-top: 2rem;
+      margin-bottom: 0.5rem;
+      font-size: 1.3rem;
+    }
+    p {
+      line-height: 1.5;
+      margin: 0.25rem 0;
+    }
+    .card {
+      background: #f9fafb;      /* lite mjukare ljusgrå istället för kritvitt */
+      border-radius: 0.75rem;
+      padding: 1rem 1.25rem;
+      box-shadow: 0 12px 25px rgba(15, 23, 42, 0.35);
+      margin-top: 1rem;
+    }
+    .highlight {
+      background: #022c22;      /* mörkgrön ruta */
+      border-left: 4px solid #16a34a;
+      padding: 0.75rem 0.9rem;
+      border-radius: 0.5rem;
+      margin-top: 0.75rem;
+      font-size: 0.9rem;
+      color: #ecfdf5;           /* ljus text i rutan */
+    }
+    .list-meta {
+      font-size: 0.9rem;
+      color: #4b5563;
+    }
 
-  .listing {
-  border-radius: 0.75rem;
-  border: 1px solid #d1d5db;
-  padding: 0.75rem 0.9rem;
-  margin-top: 0.85rem;
-  background: #f3f4f6;  /* svagt grå så den syns mot kortet */
-}
-.listing-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 0.5rem;
-  margin-bottom: 0.35rem;
-}
-.listing-title {
-  font-weight: 600;
-  font-size: 0.98rem;
-}
-.listing-label {
-  font-size: 0.8rem;
-  font-weight: 500;
-  padding: 0.1rem 0.55rem;
-  border-radius: 999px;
-  border: 1px solid #d4d4d8;
-  background: #f4f4f5;
-}
-
+    .listing {
+      border-radius: 0.75rem;
+      border: 1px solid #d1d5db;
+      padding: 0.75rem 0.9rem;
+      margin-top: 0.85rem;
+      background: #f3f4f6;  /* svagt grå så den syns mot kortet */
+    }
+    .listing-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 0.35rem;
+    }
+    .listing-title {
+      font-weight: 600;
+      font-size: 0.98rem;
+    }
+    .listing-label {
+      font-size: 0.8rem;
+      font-weight: 500;
+      padding: 0.1rem 0.55rem;
+      border-radius: 999px;
+      border: 1px solid #d4d4d8;
+      background: #f4f4f5;
+    }
     .listing-row {
       font-size: 0.9rem;
     }
@@ -132,67 +131,65 @@ p {
 <body>
   <div class="page">
     <header class="card" style="margin-top:1.5rem;">
-  <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
-    <!-- Enkel ikon -->
-    <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
-      <circle cx="10" cy="10" r="4" fill="#16a34a"></circle>
-      <circle cx="19" cy="8" r="3" fill="#16a34a"></circle>
-      <circle cx="20" cy="18" r="5" fill="#111827"></circle>
-    </svg>
-    <div>
-      <div style="font-size:1.6rem;font-weight:700;line-height:1;">Pulverbörsen</div>
-      <div style="font-size:0.9rem;color:#4b5563;">Återbrukad pulverfärg</div>
-    </div>
-  </div>
+      <div style="display:flex;align-items:center;gap:0.6rem;margin-bottom:0.5rem;">
+        <!-- Enkel ikon -->
+        <svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true">
+          <circle cx="10" cy="10" r="4" fill="#16a34a"></circle>
+          <circle cx="19" cy="8" r="3" fill="#16a34a"></circle>
+          <circle cx="20" cy="18" r="5" fill="#111827"></circle>
+        </svg>
+        <div>
+          <div style="font-size:1.6rem;font-weight:700;line-height:1;">Pulverbörsen</div>
+          <div style="font-size:0.9rem;color:#4b5563;">Återbrukad pulverfärg</div>
+        </div>
+      </div>
 
-  <h2 style="margin-top:0.5rem;font-size:1.1rem;">Vad är Pulverbörsen?</h2>
-  <p>Pulverbörsen är en enkel marknadsplats där lackerare, verkstäder och tillverkare kan köpa och sälja överbliven pulverfärg istället för att kasta den. Det sparar både pengar och klimatpåverkan.</p>
+      <h2 style="margin-top:0.5rem;font-size:1.1rem;">Vad är Pulverbörsen?</h2>
+      <p>Pulverbörsen är en enkel marknadsplats där lackerare, verkstäder och tillverkare kan köpa och sälja överbliven pulverfärg istället för att kasta den. Det sparar både pengar och klimatpåverkan.</p>
 
-    <section class="card">
-      <h2>Vill du sälja pulverfärg?</h2>
-      <p>Har du säckar eller kartonger med pulverfärg som bara står? Ta en bild med mobilen och klicka på knappen nedan så hjälper vi dig lägga upp partiet.</p>
+      <section class="card">
+        <h2>Vill du sälja pulverfärg?</h2>
+        <p>Har du säckar eller kartonger med pulverfärg som bara står? Ta en bild med mobilen och klicka på knappen nedan så hjälper vi dig lägga upp partiet.</p>
 
-      <p style="font-size:0.9rem;margin-top:0.5rem;"><strong>Så funkar det:</strong></p>
-      <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
-        <li>Fota säcken/kartongen och gärna märkning/etikett.</li>
-        <li>Klicka på knappen nedan – ett mejl till oss öppnas.</li>
-        <li>Fyll i uppgifterna, bifoga bilden och skicka.</li>
-        <li>Vi lägger upp partiet i listan och återkommer om något saknas.</li>
-      </ul>
-      <h3 style="margin-top:0.75rem;font-size:1rem;">Så är tanken med priset</h3>
-      <p style="font-size:0.9rem;margin-top:0.25rem;">
-        Pulverbörsen är tänkt som ett schysst sätt att få <em>något</em> betalt för överskottspulver, istället för att det bara står
-        eller kostar pengar att destruera.
-      </p>
-      <p style="font-size:0.9rem;margin-top:0.25rem;">
-        När du skickar in ett parti kommer vi överens om vad du ska få i handen om det säljs. Sedan lägger Pulverbörsen på en liten marginal
-        i priset mot slutkund för att täcka plattformen och jobbet med att hitta köpare.
-      </p>
-      <p style="font-size:0.9rem;margin-top:0.25rem;">
-        Du betalar alltså inget för att ligga ute i listan &ndash; bara om pulvret faktiskt blir sålt. Ju mer attraktivt pris du väljer,
-        desto snabbare brukar partierna röra på sig.
-      </p>
-      <h3 style="margin-top:0.75rem;font-size:1rem;">Hjälp med inventering och transport</h3>
-      <p style="font-size:0.9rem;margin-top:0.25rem;">
-        Har du ett större lager med blandade partier som du inte riktigt har koll på? Vi kan, mot överenskommen kostnad,
-        komma ut och hjälpa till att inventera ditt pulverlager och föreslå vad som är rimligt att lägga upp på Pulverbörsen.
-      </p>
-      <p style="font-size:0.9rem;margin-top:0.25rem;">
-        Om du vill kan vi även hjälpa till att ordna transport av sålda partier. Frakt och eventuella lyftkostnader debiteras då separat
-        enligt överenskommelse. Skriv bara att du är intresserad av inventering eller transport i mejlet när du kontaktar oss.
-      </p>
+        <p style="font-size:0.9rem;margin-top:0.5rem;"><strong>Så funkar det:</strong></p>
+        <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
+          <li>Fota säcken/kartongen och gärna märkning/etikett.</li>
+          <li>Klicka på knappen nedan – ett mejl till oss öppnas.</li>
+          <li>Fyll i uppgifterna, bifoga bilden och skicka.</li>
+          <li>Vi lägger upp partiet i listan och återkommer om något saknas.</li>
+        </ul>
 
+        <h3 style="margin-top:0.75rem;font-size:1rem;">Så är tanken med priset</h3>
+        <p style="font-size:0.9rem;margin-top:0.25rem;">
+          Pulverbörsen är tänkt som ett schysst sätt att få <em>något</em> betalt för överskottspulver, istället för att det bara står
+          eller kostar pengar att destruera.
+        </p>
+        <p style="font-size:0.9rem;margin-top:0.25rem;">
+          När du skickar in ett parti kommer vi överens om vad du ska få i handen om det säljs. Sedan lägger Pulverbörsen på en liten marginal
+          i priset mot slutkund för att täcka plattformen och jobbet med att hitta köpare.
+        </p>
+        <p style="font-size:0.9rem;margin-top:0.25rem;">
+          Du betalar alltså inget för att ligga ute i listan &ndash; bara om pulvret faktiskt blir sålt. Ju mer attraktivt pris du väljer,
+          desto snabbare brukar partierna röra på sig.
+        </p>
 
-      <a
-  class="cta-link"
-  href="mailto:salj@pulverborsen.se?subject=Jag%20vill%20s%C3%A4lja%20pulverf%C3%A4rg%20via%20Pulverb%C3%B6rsen&body=Hej%21%0A%0AJag%20vill%20l%C3%A4gga%20upp%20f%C3%B6ljande%20parti%20pulverf%C3%A4rg%20p%C3%A5%20Pulverb%C3%B6rsen%3A%0A%0AF%C3%B6retag%3A%0AKontaktperson%3A%0ATelefon%3A%0AE-post%3A%0A%0APlats%20%28stad/ort%29%3A%0ARAL%20eller%20NCS%3A%0AKul%C3%B6rnamn%20%28om%20du%20har%29%3A%0ATyp%20%28t.ex.%20epoxi/polyester%29%3A%0AYta/struktur%20%28t.ex.%20sl%C3%A4t/struktur%29%3A%0AGlans%20%28t.ex.%20glans%2085%29%3A%0AM%C3%A4ngd%20%28kg%29%3A%0A%C3%96nskat%20pris%20%28kr/kg%20eller%20paketpris%29%3A%0A%C3%96vrig%20info%3A%0A%0AJag%20bifogar%20bilder%20p%C3%A5%20s%C3%A4cken/kartongen%20och%20m%C3%A4rkning."
->
-  Sälj pulver – skicka in uppgifter
-</a>
+        <h3 style="margin-top:0.75rem;font-size:1rem;">Hjälp med inventering och transport</h3>
+        <p style="font-size:0.9rem;margin-top:0.25rem;">
+          Har du ett större lager med blandade partier som du inte riktigt har koll på? Vi kan, mot överenskommen kostnad,
+          komma ut och hjälpa till att inventera ditt pulverlager och föreslå vad som är rimligt att lägga upp på Pulverbörsen.
+        </p>
+        <p style="font-size:0.9rem;margin-top:0.25rem;">
+          Om du vill kan vi även hjälpa till att ordna transport av sålda partier. Frakt och eventuella lyftkostnader debiteras då separat
+          enligt överenskommelse. Skriv bara att du är intresserad av inventering eller transport i mejlet när du kontaktar oss.
+        </p>
 
-
-
-    </section>
+        <a
+          class="cta-link"
+          href="mailto:salj@pulverborsen.se?subject=Jag%20vill%20s%C3%A4lja%20pulverf%C3%A4rg%20via%20Pulverb%C3%B6rsen&body=Hej%21%0A%0AJag%20vill%20l%C3%A4gga%20upp%20f%C3%B6ljande%20parti%20pulverf%C3%A4rg%20p%C3%A5%20Pulverb%C3%B6rsen%3A%0A%0AF%C3%B6retag%3A%0AKontaktperson%3A%0ATelefon%3A%0AE-post%3A%0A%0APlats%20%28stad/ort%29%3A%0ARAL%20eller%20NCS%3A%0AKul%C3%B6rnamn%20%28om%20du%20har%29%3A%0ATyp%20%28t.ex.%20epoxi/polyester%29%3A%0AYta/struktur%20%28t.ex.%20sl%C3%A4t/struktur%29%3A%0AGlans%20%28t.ex.%20glans%2085%29%3A%0AM%C3%A4ngd%20%28kg%29%3A%0A%C3%96nskat%20pris%20%28kr/kg%20eller%20paketpris%29%3A%0A%C3%96vrig%20info%3A%0A%0AJag%20bifogar%20bilder%20p%C3%A5%20s%C3%A4cken/kartongen%20och%20m%C3%A4rkning."
+        >
+          Sälj pulver – skicka in uppgifter
+        </a>
+      </section>
 
       <div class="highlight">
         <strong>Klimatvinst i korthet:</strong><br />
@@ -201,9 +198,9 @@ p {
     </header>
 
     <section class="card">
-     <h2>Tillgängliga partier</h2>
-<p class="list-meta">Priser anges inkl. moms (25 %) om inget annat anges.</p>
-<p id="count" class="list-meta">Laddar lagret…</p>
+      <h2>Tillgängliga partier</h2>
+      <p class="list-meta">Priser anges inkl. moms (25 %) om inget annat anges.</p>
+      <p id="count" class="list-meta">Laddar lagret…</p>
 
       <div class="search-row">
         <input
@@ -214,110 +211,45 @@ p {
         />
       </div>
 
-           <div id="listings"></div>
-    </section><section class="card">
-  <h2>Tillgängliga partier</h2>
-  ...
-  <div id="listings"></div>
-</section>
-<section id="leverans" class="card" style="margin-top:1rem;">
-  <h2>Leverans & frakt</h2>
-  <p style="font-size:0.9rem;">
-    Alla priser i lagret är exklusive frakt. Pulvret säljs mellan företag (B2B) och
-    frakten hanteras som vanlig företagsfrakt.
-  </p>
+      <div id="listings"></div>
+    </section>
 
-  <p style="font-size:0.9rem;margin-top:0.25rem;">
-    Köparen bokar normalt själv frakt med valfritt transportföretag och får frakten
-    fakturerad direkt från fraktbolaget eller via sitt befintliga fraktavtal.
-    Inga Swish- eller kortbetalningar – allt sker på faktura som vid vanlig godsleverans.
-  </p>
+    <section id="leverans" class="card" style="margin-top:1rem;">
+      <h2>Leverans & frakt</h2>
+      <p style="font-size:0.9rem;">
+        Alla priser i lagret är exklusive frakt. Pulvret säljs mellan företag (B2B) och
+        frakten hanteras som vanlig företagsfrakt.
+      </p>
 
-  <h3 style="margin-top:0.75rem;font-size:1rem;">Så packas och skickas pulvret</h3>
-  <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
-    <li>Partierna skickas vanligtvis på pall som styckegods.</li>
-    <li>Se till att pall, säckar och kartonger är ordentligt bandade/plastade.</li>
-    <li>Vid hämtning behöver ni meddela om truck/lastkaj finns, eller om bakgavellyft krävs.</li>
-  </ul>
+      <p style="font-size:0.9rem;margin-top:0.25rem;">
+        Köparen bokar normalt själv frakt med valfritt transportföretag och får frakten
+        fakturerad direkt från fraktbolaget eller via sitt befintliga fraktavtal.
+        Inga Swish- eller kortbetalningar – allt sker på faktura som vid vanlig godsleverans.
+      </p>
 
-  <h3 style="margin-top:0.75rem;font-size:1rem;">Uppgifter som underlättar fraktbokning</h3>
-  <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
-    <li>Total vikt (kg) och antal kollin/pallar.</li>
-    <li>Hämtadress och leveransadress (postnummer, ort).</li>
-    <li>Öppettider för lastning och lossning.</li>
-    <li>Kontaktperson och telefonnummer på båda sidor.</li>
-  </ul>
+      <h3 style="margin-top:0.75rem;font-size:1rem;">Så packas och skickas pulvret</h3>
+      <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
+        <li>Partierna skickas vanligtvis på pall som styckegods.</li>
+        <li>Se till att pall, säckar och kartonger är ordentligt bandade/plastade.</li>
+        <li>Vid hämtning behöver ni meddela om truck/lastkaj finns, eller om bakgavellyft krävs.</li>
+      </ul>
 
-  <p style="font-size:0.9rem;margin-top:0.25rem;">
-    Om du vill ha hjälp att uppskatta frakt eller välja transportör – skriv det i
-    din förfrågan så försöker vi guida dig, men själva fraktavtalet är alltid mellan
-    er och fraktbolaget.
-  </p>
-</section>
+      <h3 style="margin-top:0.75rem;font-size:1rem;">Uppgifter som underlättar fraktbokning</h3>
+      <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
+        <li>Total vikt (kg) och antal kollin/pallar.</li>
+        <li>Hämtadress och leveransadress (postnummer, ort).</li>
+        <li>Öppettider för lastning och lossning.</li>
+        <li>Kontaktperson och telefonnummer på båda sidor.</li>
+      </ul>
 
-<section id="leverans" class="card" style="margin-top:1rem;">
-  <h2>Leverans & frakt</h2>
-  <p style="font-size:0.9rem;">
-    Alla priser i lagret är exklusive frakt. Pulvret säljs mellan företag (B2B) och
-    frakten hanteras som vanlig företagsfrakt.
-  </p>
-
-  <p style="font-size:0.9rem;margin-top:0.25rem;">
-    Köparen bokar normalt själv frakt med valfritt transportföretag och får frakten
-    fakturerad direkt från fraktbolaget eller via sitt befintliga fraktavtal.
-    Inga Swish- eller kortbetalningar – allt sker på faktura som vid vanlig godsleverans.
-  </p>
-
-  <h3 style="margin-top:0.75rem;font-size:1rem;">Så packas och skickas pulvret</h3>
-  <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
-    <li>Partierna skickas vanligtvis på pall som styckegods.</li>
-    <li>Se till att pall, säckar och kartonger är ordentligt bandade/plastade.</li>
-    <li>Vid hämtning behöver ni meddela om truck/lastkaj finns, eller om bakgavellyft krävs.</li>
-  </ul>
-
-  <h3 style="margin-top:0.75rem;font-size:1rem;">Uppgifter som underlättar fraktbokning</h3>
-  <ul style="margin-top:0.25rem;padding-left:1.1rem;font-size:0.9rem;">
-    <li>Total vikt (kg) och antal kollin/pallar.</li>
-    <li>Hämtadress och leveransadress (postnummer, ort).</li>
-    <li>Öppettider för lastning och lossning.</li>
-    <li>Kontaktperson och telefonnummer på båda sidor.</li>
-  </ul>
-
-  <p style="font-size:0.9rem;margin-top:0.25rem;">
-    Om du vill ha hjälp att uppskatta frakt eller välja transportör – skriv det i
-    din förfrågan så försöker vi guida dig, men själva fraktavtalet är alltid mellan
-    er och fraktbolaget.
-  </p>
-</section>
+      <p style="font-size:0.9rem;margin-top:0.25rem;">
+        Om du vill ha hjälp att uppskatta frakt eller välja transportör – skriv det i
+        din förfrågan så försöker vi guida dig, men själva fraktavtalet är alltid mellan
+        er och fraktbolaget.
+      </p>
+    </section>
 
     <section class="card" style="margin-top:1rem;">
-      <h2>Vanliga frågor</h2>
-</section>
-      <details style="font-size:0.9rem;margin-top:0.5rem;">
-        <summary>Vad kostar det att ligga ute på Pulverbörsen?</summary>
-        <p style="margin-top:0.25rem;">
-          Det kostar inget att ha dina partier listade. Vi tar bara betalt när något faktiskt blir sålt,
-          genom en marginal i priset mot slutkund som vi kommer överens om i förväg.
-        </p>
-      </details>
-
-      <details style="font-size:0.9rem;margin-top:0.5rem;">
-        <summary>Hur mycket får jag som säljare?</summary>
-        <p style="margin-top:0.25rem;">
-          När du skickar in ett parti pratar vi ihop oss om ett netto-pris till dig. Det är det du får ut om partiet säljs.
-          Ovanpå det lägger Pulverbörsen sin del för att täcka arbete, plattform och administration.
-        </p>
-      </details>
-
-      <details style="font-size:0.9rem;margin-top:0.5rem;">
-        <summary>Kan privatpersoner sälja pulverfärg?</summary>
-        <p style="margin-top:0.25rem;">
-          I första hand vänder vi oss till lackerare, verkstäder och tillverkare. Har du som privatperson ett parti pulverfärg
-          du vill bli av med kan du ändå höra av dig, så ser vi om det är lämpligt att lägga upp.
-        </p>
-      </details>
-
-         <section class="card" style="margin-top:1rem;">
       <h2>Vanliga frågor</h2>
 
       <details style="font-size:0.9rem;margin-top:0.5rem;">
@@ -365,258 +297,227 @@ p {
         </p>
       </details>
     </section>
-
-
   </div>
 
+  <script>
+    const listingsEl = document.getElementById("listings");
+    const countEl = document.getElementById("count");
+    const searchInput = document.getElementById("search");
 
-     <script>
-  const listingsEl = document.getElementById("listings");
-  const countEl = document.getElementById("count");
-  const searchInput = document.getElementById("search");
+    const PAGE_SIZE = 20; // hur många partier som visas åt gången
 
-  const PAGE_SIZE = 20; // hur många partier som visas åt gången
+    let allItems = [];
+    let visibleItems = [];  // nuvarande filtrerade lista
+    let visibleCount = 0;   // hur många av dem som visas just nu
 
-  let allItems = [];
-  let visibleItems = [];  // nuvarande filtrerade lista
-  let visibleCount = 0;   // hur många av dem som visas just nu
+    // Ny CSV-struktur:
+    // 0: Aktiv (ja/nej)
+    // 1: Fabrikat
+    // 2: RAL/NCS
+    // 3: Kulör
+    // 4: Typ
+    // 5: Bäst före datum
+    // 6: Yt/Struktur
+    // 7: Mängd
+    // 8: Glans/matt
+    // 9: Plats
+    // 10: Pris_kr_kg
+    // 11: Notering
+    // 12: CO2_text
+    function parseCSV(text) {
+      const rows = text.trim().split(/\r?\n/).filter(r => r.trim() !== "");
+      if (rows.length <= 1) return [];
 
-  // Ny CSV-struktur:
-  // 0: Aktiv (ja/nej)
-  // 1: Fabrikat
-  // 2: RAL/NCS
-  // 3: Kulör
-  // 4: Typ
-  // 5: Bäst före datum
-  // 6: Yt/Struktur
-  // 7: Mängd
-  // 8: Glans/matt
-  // 9: Plats
-  // 10: Pris_kr_kg
-  // 11: Notering
-  // 12: CO2_text
-  function parseCSV(text) {
-    const rows = text.trim().split(/\r?\n/).filter(r => r.trim() !== "");
-    if (rows.length <= 1) return [];
-
-    return rows.slice(1).map(row => {
-      const cols = row.split(";").map(c => c.trim());
-      return {
-        aktiv:    cols[0]  || "",
-        fabrikat: cols[1]  || "",
-        ral:      cols[2]  || "",
-        kulor:    cols[3]  || "",
-        typ:      cols[4]  || "",
-        bastfore: cols[5]  || "",
-        yt:       cols[6]  || "",
-        mangd:    cols[7]  || "",
-        glans:    cols[8]  || "",
-        plats:    cols[9]  || "",
-        pris:     cols[10] || "",
-        notering: cols[11] || "",
-        co2:      cols[12] || ""
-      };
-    }).filter(item => !item.aktiv || item.aktiv.toLowerCase() === "ja");
-  }
-
-  function formatKg(value) {
-    if (!value) return "–";
-    const clean = String(value).replace(/[^\d.,]/g, "");
-    return clean ? clean + " kg" : "–";
-  }
-
-  function formatPris(value) {
-    if (!value) return "Enligt överenskommelse";
-    const clean = String(value).replace(/[^\d.,]/g, "");
-    return clean ? clean + " kr/kg" : "Enligt överenskommelse";
-  }
-function parseNumber(value) {
-  if (value === null || value === undefined) return null;
-  const clean = String(value)
-    .replace(/\s/g, "")      // ta bort mellanslag
-    .replace(",", ".")       // ersätt komma med punkt
-    .replace(/[^\d.]/g, ""); // ta bort allt som inte är siffra eller punkt
-
-  const num = parseFloat(clean);
-  return isNaN(num) ? null : num;
-}
-
-  // Renderar nuvarande sida (visibleItems + visibleCount)
-  function renderPage() {
-    listingsEl.innerHTML = "";
-
-    if (!visibleItems.length) {
-      countEl.textContent = "Inga partier matchar din sökning.";
-      return;
+      return rows.slice(1).map(row => {
+        const cols = row.split(";").map(c => c.trim());
+        return {
+          aktiv:    cols[0]  || "",
+          fabrikat: cols[1]  || "",
+          ral:      cols[2]  || "",
+          kulor:    cols[3]  || "",
+          typ:      cols[4]  || "",
+          bastfore: cols[5]  || "",
+          yt:       cols[6]  || "",
+          mangd:    cols[7]  || "",
+          glans:    cols[8]  || "",
+          plats:    cols[9]  || "",
+          pris:     cols[10] || "",
+          notering: cols[11] || "",
+          co2:      cols[12] || ""
+        };
+      }).filter(item => !item.aktiv || item.aktiv.toLowerCase() === "ja");
     }
 
-    countEl.textContent = `Visar ${visibleItems.length} aktivt part${visibleItems.length === 1 ? "i" : "ier"} ur lagret.`;
-
-    const limit = Math.min(visibleCount, visibleItems.length);
-
-    for (let i = 0; i < limit; i++) {
-      const item = visibleItems[i];
-      const div = document.createElement("div");
-      div.className = "listing";
-
-      const titleParts = [];
-      if (item.ral)   titleParts.push(item.ral);
-      if (item.kulor) titleParts.push(item.kulor);
-      const title = titleParts.join(" – ") || "Pulverparti";
-
-      const typYta = [item.typ, item.yt].filter(Boolean).join(", ");
-      const co2Text = item.co2 ? `Ca ${item.co2} kg CO₂ sparat` : "";
-const mangdNum = parseNumber(item.mangd);
-const prisNum = parseNumber(item.pris);
-let totalLine = "";
-
-if (mangdNum !== null && prisNum !== null) {
-  const total = Math.round(mangdNum * prisNum);
-  totalLine = `<div class="listing-row"><span>Pris totalt (hela partiet):</span> ca ${total} kr</div>`;
-}
-
-      const subject = `Beställning Pulverbörsen – ${title}`;
-      const bodyLines = [
-  "Hej!",
-  "",
-  "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
-  "",
-  `- Fabrikat: ${item.fabrikat || "-"}`,
-  `- RAL/kulör: ${title}`,
-  `- Typ: ${item.typ || "-"}`,
-  `- Bäst före: ${item.bastfore || "-"}`,
-  `- Mängd: ${formatKg(item.mangd)}`,
-  `- Plats: ${item.plats || "-"}`,
-  `- Pris: ${formatPris(item.pris)}`,
-  "",
-  "Frakt:",
-  "- Vi bokar själva frakt: JA/NEJ",
-  "- Fraktbolag (om ni vet redan):",
-  "- Önskat leveranssätt (pall, bakgavellyft, etc):",
-  "",
-  "Mina fakturauppgifter (köpare):",
-  "Företag:",
-  "Organisationsnummer:",
-  "Fakturaadress:",
-  "Fakturamottagare / referens:",
-  "Faktura-e-post:",
-  "",
-  "Leveransadress:",
-  "Kontaktperson:",
-  "Telefon:",
-  "",
-  "Övrig info:",
-  "",
-  "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
-];
-
-
-      const mailto = `mailto:order@pulverborsen.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
-
-     div.innerHTML = `
-  <div class="listing-header">
-    <div class="listing-title">${title}</div>
-    <div class="listing-label">Till salu</div>
-  </div>
-  <div class="listing-row"><span>Fabrikat:</span> ${item.fabrikat || "–"}</div>
-  <div class="listing-row"><span>Plats:</span> ${item.plats || "–"}</div>
-  <div class="listing-row"><span>Mängd:</span> ${formatKg(item.mangd)}</div>
-  <div class="listing-row"><span>Typ / yta / glans:</span> ${[typYta, item.glans].filter(Boolean).join(" – ") || "–"}</div>
-  <div class="listing-row"><span>Bäst före:</span> ${item.bastfore || "–"}</div>
-  <div class="listing-row"><span>Pris:</span> ${formatPris(item.pris)}</div>
-  ${totalLine}
-  ${co2Text ? `<div class="listing-row"><span>CO₂ (grov uppskattning):</span> ${co2Text}</div>` : ""}
-  ${item.notering ? `<div class="listing-row"><span>Notering:</span> ${item.notering}</div>` : ""}
-  <a class="cta-link" href="${mailto}">
-    Köp det här partiet
-  </a>
-`;
-
-      listingsEl.appendChild(div);
+    function formatKg(value) {
+      if (!value) return "–";
+      const clean = String(value).replace(/[^\d.,]/g, "");
+      return clean ? clean + " kg" : "–";
     }
 
-    // "Visa fler"-knapp om det finns fler än vi visar
-    if (visibleCount < visibleItems.length) {
-      const btn = document.createElement("button");
-      btn.textContent = "Visa fler partier";
-      btn.style.marginTop = "0.75rem";
-      btn.style.padding = "0.4rem 0.8rem";
-      btn.style.borderRadius = "999px";
-      btn.style.border = "1px solid #d1d5db";
-      btn.style.background = "#ffffff";
-      btn.style.cursor = "pointer";
-      btn.style.fontSize = "0.9rem";
-
-      btn.addEventListener("click", () => {
-        visibleCount += PAGE_SIZE;
-        renderPage();
-      });
-
-      const wrapper = document.createElement("div");
-      wrapper.style.display = "flex";
-      wrapper.style.justifyContent = "center";
-      wrapper.appendChild(btn);
-      listingsEl.appendChild(wrapper);
+    function formatPris(value) {
+      if (!value) return "Enligt överenskommelse";
+      const clean = String(value).replace(/[^\d.,]/g, "");
+      return clean ? clean + " kr/kg" : "Enligt överenskommelse";
     }
-  }
 
-  function applySearch() {
-    const q = searchInput.value.trim().toLowerCase();
-    if (!q) {
-      visibleItems = allItems.slice();
-    } else {
-      visibleItems = allItems.filter(item =>
-        [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering]
-          .some(v => (v || "").toLowerCase().includes(q))
-      );
+    function parseNumber(value) {
+      if (value === null || value === undefined) return null;
+      const clean = String(value)
+        .replace(/\s/g, "")      // ta bort mellanslag
+        .replace(",", ".")       // ersätt komma med punkt
+        .replace(/[^\d.]/g, ""); // ta bort allt som inte är siffra eller punkt
+
+      const num = parseFloat(clean);
+      return isNaN(num) ? null : num;
     }
-    visibleCount = PAGE_SIZE;
-    renderPage();
-  }
 
-  searchInput.addEventListener("input", applySearch);
+    // Renderar nuvarande sida (visibleItems + visibleCount)
+    function renderPage() {
+      listingsEl.innerHTML = "";
 
-  // Ladda lagret från lager.csv
-  fetch("lager.csv?" + Date.now())
-    .then(r => r.text())
-    .then(text => {
-      allItems = parseCSV(text);
-      visibleItems = allItems.slice();
+      if (!visibleItems.length) {
+        countEl.textContent = "Inga partier matchar din sökning.";
+        return;
+      }
+
+      countEl.textContent = `Visar ${visibleItems.length} aktivt part${visibleItems.length === 1 ? "i" : "ier"} ur lagret.`;
+
+      const limit = Math.min(visibleCount, visibleItems.length);
+
+      for (let i = 0; i < limit; i++) {
+        const item = visibleItems[i];
+        const div = document.createElement("div");
+        div.className = "listing";
+
+        const titleParts = [];
+        if (item.ral)   titleParts.push(item.ral);
+        if (item.kulor) titleParts.push(item.kulor);
+        const title = titleParts.join(" – ") || "Pulverparti";
+
+        const typYta = [item.typ, item.yt].filter(Boolean).join(", ");
+        const co2Text = item.co2 ? `Ca ${item.co2} kg CO₂ sparat` : "";
+        const mangdNum = parseNumber(item.mangd);
+        const prisNum = parseNumber(item.pris);
+        let totalLine = "";
+
+        if (mangdNum !== null && prisNum !== null) {
+          const total = Math.round(mangdNum * prisNum);
+          totalLine = `<div class="listing-row"><span>Pris totalt (hela partiet):</span> ca ${total} kr</div>`;
+        }
+
+        const subject = `Beställning Pulverbörsen – ${title}`;
+        const bodyLines = [
+          "Hej!",
+          "",
+          "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
+          "",
+          `- Fabrikat: ${item.fabrikat || "-"}`,
+          `- RAL/kulör: ${title}`,
+          `- Typ: ${item.typ || "-"}`,
+          `- Bäst före: ${item.bastfore || "-"}`,
+          `- Mängd: ${formatKg(item.mangd)}`,
+          `- Plats: ${item.plats || "-"}`,
+          `- Pris: ${formatPris(item.pris)}`,
+          "",
+          "Frakt:",
+          "- Vi bokar själva frakt: JA/NEJ",
+          "- Fraktbolag (om ni vet redan):",
+          "- Önskat leveranssätt (pall, bakgavellyft, etc):",
+          "",
+          "Mina fakturauppgifter (köpare):",
+          "Företag:",
+          "Organisationsnummer:",
+          "Fakturaadress:",
+          "Fakturamottagare / referens:",
+          "Faktura-e-post:",
+          "",
+          "Leveransadress:",
+          "Kontaktperson:",
+          "Telefon:",
+          "",
+          "Övrig info:",
+          "",
+          "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
+        ];
+
+        const mailto = `mailto:order@pulverborsen.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
+        div.innerHTML = `
+          <div class="listing-header">
+            <div class="listing-title">${title}</div>
+            <div class="listing-label">Till salu</div>
+          </div>
+          <div class="listing-row"><span>Fabrikat:</span> ${item.fabrikat || "–"}</div>
+          <div class="listing-row"><span>Plats:</span> ${item.plats || "–"}</div>
+          <div class="listing-row"><span>Mängd:</span> ${formatKg(item.mangd)}</div>
+          <div class="listing-row"><span>Typ / yta / glans:</span> ${[typYta, item.glans].filter(Boolean).join(" – ") || "–"}</div>
+          <div class="listing-row"><span>Bäst före:</span> ${item.bastfore || "–"}</div>
+          <div class="listing-row"><span>Pris:</span> ${formatPris(item.pris)}</div>
+          ${totalLine}
+          ${co2Text ? `<div class="listing-row"><span>CO₂ (grov uppskattning):</span> ${co2Text}</div>` : ""}
+          ${item.notering ? `<div class="listing-row"><span>Notering:</span> ${item.notering}</div>` : ""}
+          <a class="cta-link" href="${mailto}">
+            Köp det här partiet
+          </a>
+        `;
+
+        listingsEl.appendChild(div);
+      }
+
+      // "Visa fler"-knapp om det finns fler än vi visar
+      if (visibleCount < visibleItems.length) {
+        const btn = document.createElement("button");
+        btn.textContent = "Visa fler partier";
+        btn.style.marginTop = "0.75rem";
+        btn.style.padding = "0.4rem 0.8rem";
+        btn.style.borderRadius = "999px";
+        btn.style.border = "1px solid #d1d5db";
+        btn.style.background = "#ffffff";
+        btn.style.cursor = "pointer";
+        btn.style.fontSize = "0.9rem";
+
+        btn.addEventListener("click", () => {
+          visibleCount += PAGE_SIZE;
+          renderPage();
+        });
+
+        const wrapper = document.createElement("div");
+        wrapper.style.display = "flex";
+        wrapper.style.justifyContent = "center";
+        wrapper.appendChild(btn);
+        listingsEl.appendChild(wrapper);
+      }
+    }
+
+    function applySearch() {
+      const q = searchInput.value.trim().toLowerCase();
+      if (!q) {
+        visibleItems = allItems.slice();
+      } else {
+        visibleItems = allItems.filter(item =>
+          [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering]
+            .some(v => (v || "").toLowerCase().includes(q))
+        );
+      }
       visibleCount = PAGE_SIZE;
       renderPage();
-    })
-    .catch(err => {
-      console.error(err);
-      countEl.textContent = "Kunde inte läsa in lagret just nu.";
-    });
-</script>
+    }
 
+    searchInput.addEventListener("input", applySearch);
 
-
+    // Ladda lagret från lager.csv
+    fetch("lager.csv?" + Date.now())
+      .then(r => r.text())
+      .then(text => {
+        allItems = parseCSV(text);
+        visibleItems = allItems.slice();
+        visibleCount = PAGE_SIZE;
+        renderPage();
+      })
+      .catch(err => {
+        console.error(err);
+        countEl.textContent = "Kunde inte läsa in lagret just nu.";
+      });
+  </script>
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
