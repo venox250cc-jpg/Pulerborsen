@@ -283,194 +283,205 @@ p {
 
 
      <script>
-    const listingsEl = document.getElementById("listings");
-    const countEl = document.getElementById("count");
-    const searchInput = document.getElementById("search");
+  const listingsEl = document.getElementById("listings");
+  const countEl = document.getElementById("count");
+  const searchInput = document.getElementById("search");
 
-    const PAGE_SIZE = 20; // hur många partier som visas åt gången
+  const PAGE_SIZE = 20; // hur många partier som visas åt gången
 
-    let allItems = [];
-    let visibleItems = [];  // nuvarande filtrerade lista
-    let visibleCount = 0;   // hur många av dem som visas just nu
+  let allItems = [];
+  let visibleItems = [];  // nuvarande filtrerade lista
+  let visibleCount = 0;   // hur många av dem som visas just nu
 
-    // Din CSV har kolumnerna:
-    // 0: Aktiv (ja/nej)
-    // 1: RAL/NCS
-    // 2: Kulör
-    // 3: Typ
-    // 4: Yt/Struktur
-    // 5: Mängd
-    // 6: Glans
-    // 7: Plats
-    // 8: Pris_kr_kg
-    // 9: Notering
-    // 10: CO2_text
-    function parseCSV(text) {
-      const rows = text.trim().split(/\r?\n/).filter(r => r.trim() !== "");
-      if (rows.length <= 1) return [];
+  // Ny CSV-struktur:
+  // 0: Aktiv (ja/nej)
+  // 1: Fabrikat
+  // 2: RAL/NCS
+  // 3: Kulör
+  // 4: Typ
+  // 5: Bäst före datum
+  // 6: Yt/Struktur
+  // 7: Mängd
+  // 8: Glans/matt
+  // 9: Plats
+  // 10: Pris_kr_kg
+  // 11: Notering
+  // 12: CO2_text
+  function parseCSV(text) {
+    const rows = text.trim().split(/\r?\n/).filter(r => r.trim() !== "");
+    if (rows.length <= 1) return [];
 
-      return rows.slice(1).map(row => {
-        const cols = row.split(";").map(c => c.trim());
-        return {
-          aktiv: cols[0] || "",
-          ral: cols[1] || "",
-          kulor: cols[2] || "",
-          typ: cols[3] || "",
-          yt: cols[4] || "",
-          mangd: cols[5] || "",
-          glans: cols[6] || "",
-          plats: cols[7] || "",
-          pris: cols[8] || "",
-          notering: cols[9] || "",
-          co2: cols[10] || ""
-        };
-      }).filter(item => !item.aktiv || item.aktiv.toLowerCase() === "ja");
+    return rows.slice(1).map(row => {
+      const cols = row.split(";").map(c => c.trim());
+      return {
+        aktiv:    cols[0]  || "",
+        fabrikat: cols[1]  || "",
+        ral:      cols[2]  || "",
+        kulor:    cols[3]  || "",
+        typ:      cols[4]  || "",
+        bastfore: cols[5]  || "",
+        yt:       cols[6]  || "",
+        mangd:    cols[7]  || "",
+        glans:    cols[8]  || "",
+        plats:    cols[9]  || "",
+        pris:     cols[10] || "",
+        notering: cols[11] || "",
+        co2:      cols[12] || ""
+      };
+    }).filter(item => !item.aktiv || item.aktiv.toLowerCase() === "ja");
+  }
+
+  function formatKg(value) {
+    if (!value) return "–";
+    const clean = String(value).replace(/[^\d.,]/g, "");
+    return clean ? clean + " kg" : "–";
+  }
+
+  function formatPris(value) {
+    if (!value) return "Enligt överenskommelse";
+    const clean = String(value).replace(/[^\d.,]/g, "");
+    return clean ? clean + " kr/kg" : "Enligt överenskommelse";
+  }
+
+  // Renderar nuvarande sida (visibleItems + visibleCount)
+  function renderPage() {
+    listingsEl.innerHTML = "";
+
+    if (!visibleItems.length) {
+      countEl.textContent = "Inga partier matchar din sökning.";
+      return;
     }
 
-    function formatKg(value) {
-      if (!value) return "–";
-      const clean = String(value).replace(/[^\d.,]/g, "");
-      return clean ? clean + " kg" : "–";
+    countEl.textContent = `Visar ${visibleItems.length} aktivt part${visibleItems.length === 1 ? "i" : "ier"} ur lagret.`;
+
+    const limit = Math.min(visibleCount, visibleItems.length);
+
+    for (let i = 0; i < limit; i++) {
+      const item = visibleItems[i];
+      const div = document.createElement("div");
+      div.className = "listing";
+
+      const titleParts = [];
+      if (item.ral)   titleParts.push(item.ral);
+      if (item.kulor) titleParts.push(item.kulor);
+      const title = titleParts.join(" – ") || "Pulverparti";
+
+      const typYta = [item.typ, item.yt].filter(Boolean).join(", ");
+      const co2Text = item.co2 ? `Ca ${item.co2} kg CO₂ sparat` : "";
+
+      const subject = `Beställning Pulverbörsen – ${title}`;
+      const bodyLines = [
+        "Hej!",
+        "",
+        "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
+        "",
+        `- Fabrikat: ${item.fabrikat || "-"}`,
+        `- RAL/kulör: ${title}`,
+        `- Typ: ${item.typ || "-"}`,
+        `- Bäst före: ${item.bastfore || "-"}`,
+        `- Mängd: ${formatKg(item.mangd)}`,
+        `- Plats: ${item.plats || "-"}`,
+        `- Pris: ${formatPris(item.pris)}`,
+        "",
+        "Mina fakturauppgifter (köpare):",
+        "Företag:",
+        "Organisationsnummer:",
+        "Fakturaadress:",
+        "Fakturamottagare / referens:",
+        "Faktura-e-post:",
+        "",
+        "Leveransadress:",
+        "Kontaktperson:",
+        "Telefon:",
+        "",
+        "Övrig info:",
+        "",
+        "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
+      ];
+
+      const mailto = `mailto:order@pulverborsen.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
+
+      div.innerHTML = `
+        <div class="listing-header">
+          <div class="listing-title">${title}</div>
+          <div class="listing-label">Till salu</div>
+        </div>
+        <div class="listing-row"><span>Fabrikat:</span> ${item.fabrikat || "–"}</div>
+        <div class="listing-row"><span>Plats:</span> ${item.plats || "–"}</div>
+        <div class="listing-row"><span>Mängd:</span> ${formatKg(item.mangd)}</div>
+        <div class="listing-row"><span>Typ / yta / glans:</span> ${[typYta, item.glans].filter(Boolean).join(" – ") || "–"}</div>
+        <div class="listing-row"><span>Bäst före:</span> ${item.bastfore || "–"}</div>
+        <div class="listing-row"><span>Pris:</span> ${formatPris(item.pris)}</div>
+        ${co2Text ? `<div class="listing-row"><span>CO₂ (grov uppskattning):</span> ${co2Text}</div>` : ""}
+        ${item.notering ? `<div class="listing-row"><span>Notering:</span> ${item.notering}</div>` : ""}
+        <a class="cta-link" href="${mailto}">
+          Köp det här partiet
+        </a>
+      `;
+      listingsEl.appendChild(div);
     }
 
-    function formatPris(value) {
-      if (!value) return "Enligt överenskommelse";
-      const clean = String(value).replace(/[^\d.,]/g, "");
-      return clean ? clean + " kr/kg" : "Enligt överenskommelse";
+    // "Visa fler"-knapp om det finns fler än vi visar
+    if (visibleCount < visibleItems.length) {
+      const btn = document.createElement("button");
+      btn.textContent = "Visa fler partier";
+      btn.style.marginTop = "0.75rem";
+      btn.style.padding = "0.4rem 0.8rem";
+      btn.style.borderRadius = "999px";
+      btn.style.border = "1px solid #d1d5db";
+      btn.style.background = "#ffffff";
+      btn.style.cursor = "pointer";
+      btn.style.fontSize = "0.9rem";
+
+      btn.addEventListener("click", () => {
+        visibleCount += PAGE_SIZE;
+        renderPage();
+      });
+
+      const wrapper = document.createElement("div");
+      wrapper.style.display = "flex";
+      wrapper.style.justifyContent = "center";
+      wrapper.appendChild(btn);
+      listingsEl.appendChild(wrapper);
     }
+  }
 
-    // Renderar nuvarande sida (visibleItems + visibleCount)
-    function renderPage() {
-      listingsEl.innerHTML = "";
-
-      if (!visibleItems.length) {
-        countEl.textContent = "Inga partier matchar din sökning.";
-        return;
-      }
-
-      // totalt antal matchande, inte bara de som visas
-      countEl.textContent = `Visar ${visibleItems.length} aktivt part${visibleItems.length === 1 ? "i" : "ier"} ur lagret.`;
-
-      const limit = Math.min(visibleCount, visibleItems.length);
-
-      for (let i = 0; i < limit; i++) {
-        const item = visibleItems[i];
-        const div = document.createElement("div");
-        div.className = "listing";
-
-        const titleParts = [];
-        if (item.ral) titleParts.push(item.ral);
-        if (item.kulor) titleParts.push(item.kulor);
-        const title = titleParts.join(" – ") || "Pulverparti";
-
-        const typYta = [item.typ, item.yt].filter(Boolean).join(", ");
-        const co2Text = item.co2 ? `Ca ${item.co2} kg CO₂ sparat` : "";
-
-        const subject = `Beställning Pulverbörsen – ${title}`;
-        const bodyLines = [
-          "Hej!",
-          "",
-          "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
-          "",
-          `- RAL/kulör: ${title}`,
-          `- Mängd: ${formatKg(item.mangd)}`,
-          `- Plats: ${item.plats || "-"}`,
-          `- Pris: ${formatPris(item.pris)}`,
-          "",
-          "Mina fakturauppgifter (köpare):",
-          "Företag:",
-          "Organisationsnummer:",
-          "Fakturaadress:",
-          "Fakturamottagare / referens:",
-          "Faktura-e-post:",
-          "",
-          "Leveransadress:",
-          "Kontaktperson:",
-          "Telefon:",
-          "",
-          "Övrig info:",
-          "",
-          "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
-        ];
-
-        const mailto = `mailto:order@pulverborsen.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
-
-        div.innerHTML = `
-          <div class="listing-header">
-            <div class="listing-title">${title}</div>
-            <div class="listing-label">Till salu</div>
-          </div>
-          <div class="listing-row"><span>Plats:</span> ${item.plats || "–"}</div>
-          <div class="listing-row"><span>Mängd:</span> ${formatKg(item.mangd)}</div>
-          <div class="listing-row"><span>Typ / yta / glans:</span> ${[typYta, item.glans].filter(Boolean).join(" – ") || "–"}</div>
-          <div class="listing-row"><span>Pris:</span> ${formatPris(item.pris)}</div>
-          ${co2Text ? `<div class="listing-row"><span>CO₂ (grov uppskattning):</span> ${co2Text}</div>` : ""}
-          <a class="cta-link" href="${mailto}">
-            Köp det här partiet
-          </a>
-        `;
-        listingsEl.appendChild(div);
-      }
-
-      // Om det finns fler än vi visar: lägg en "Visa fler partier"-knapp
-      if (visibleCount < visibleItems.length) {
-        const btn = document.createElement("button");
-        btn.textContent = "Visa fler partier";
-        btn.style.marginTop = "0.75rem";
-        btn.style.padding = "0.4rem 0.8rem";
-        btn.style.borderRadius = "999px";
-        btn.style.border = "1px solid #d1d5db";
-        btn.style.background = "#ffffff";
-        btn.style.cursor = "pointer";
-        btn.style.fontSize = "0.9rem";
-
-        btn.addEventListener("click", () => {
-          visibleCount += PAGE_SIZE;
-          renderPage();
-        });
-
-        const wrapper = document.createElement("div");
-        wrapper.style.display = "flex";
-        wrapper.style.justifyContent = "center";
-        wrapper.appendChild(btn);
-        listingsEl.appendChild(wrapper);
-      }
+  function applySearch() {
+    const q = searchInput.value.trim().toLowerCase();
+    if (!q) {
+      visibleItems = allItems.slice();
+    } else {
+      visibleItems = allItems.filter(item =>
+        [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering]
+          .some(v => (v || "").toLowerCase().includes(q))
+      );
     }
+    visibleCount = PAGE_SIZE;
+    renderPage();
+  }
 
-    function applySearch() {
-      const q = searchInput.value.trim().toLowerCase();
-      if (!q) {
-        visibleItems = allItems.slice();
-      } else {
-        visibleItems = allItems.filter(item =>
-          [item.ral, item.kulor, item.typ, item.yt, item.plats, item.glans, item.notering]
-            .some(v => (v || "").toLowerCase().includes(q))
-        );
-      }
+  searchInput.addEventListener("input", applySearch);
+
+  // Ladda lagret från lager.csv
+  fetch("lager.csv?" + Date.now())
+    .then(r => r.text())
+    .then(text => {
+      allItems = parseCSV(text);
+      visibleItems = allItems.slice();
       visibleCount = PAGE_SIZE;
       renderPage();
-    }
+    })
+    .catch(err => {
+      console.error(err);
+      countEl.textContent = "Kunde inte läsa in lagret just nu.";
+    });
+</script>
 
-    searchInput.addEventListener("input", applySearch);
-
-    // Ladda lagret
-    fetch("lager.csv?" + Date.now())
-      .then(r => r.text())
-      .then(text => {
-        allItems = parseCSV(text);
-        visibleItems = allItems.slice();
-        visibleCount = PAGE_SIZE;
-        renderPage();
-      })
-      .catch(err => {
-        console.error(err);
-        countEl.textContent = "Kunde inte läsa in lagret just nu.";
-      });
-  </script>
 
 
 </body>
 </html>
+
 
 
 
