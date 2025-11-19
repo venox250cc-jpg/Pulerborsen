@@ -389,33 +389,39 @@ if (mangdNum !== null && prisNum !== null) {
 
       const subject = `Beställning Pulverbörsen – ${title}`;
       const bodyLines = [
-        "Hej!",
-        "",
-        "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
-        "",
-        `- Fabrikat: ${item.fabrikat || "-"}`,
-        `- RAL/kulör: ${title}`,
-        `- Typ: ${item.typ || "-"}`,
-        `- Bäst före: ${item.bastfore || "-"}`,
-        `- Mängd: ${formatKg(item.mangd)}`,
-        `- Plats: ${item.plats || "-"}`,
-        `- Pris: ${formatPris(item.pris)}`,
-        "",
-        "Mina fakturauppgifter (köpare):",
-        "Företag:",
-        "Organisationsnummer:",
-        "Fakturaadress:",
-        "Fakturamottagare / referens:",
-        "Faktura-e-post:",
-        "",
-        "Leveransadress:",
-        "Kontaktperson:",
-        "Telefon:",
-        "",
-        "Övrig info:",
-        "",
-        "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
-      ];
+  "Hej!",
+  "",
+  "Jag vill köpa följande parti pulverfärg via Pulverbörsen:",
+  "",
+  `- Fabrikat: ${item.fabrikat || "-"}`,
+  `- RAL/kulör: ${title}`,
+  `- Typ: ${item.typ || "-"}`,
+  `- Bäst före: ${item.bastfore || "-"}`,
+  `- Mängd: ${formatKg(item.mangd)}`,
+  `- Plats: ${item.plats || "-"}`,
+  `- Pris: ${formatPris(item.pris)}`,
+  "",
+  "Frakt:",
+  "- Vi bokar själva frakt: JA/NEJ",
+  "- Fraktbolag (om ni vet redan):",
+  "- Önskat leveranssätt (pall, bakgavellyft, etc):",
+  "",
+  "Mina fakturauppgifter (köpare):",
+  "Företag:",
+  "Organisationsnummer:",
+  "Fakturaadress:",
+  "Fakturamottagare / referens:",
+  "Faktura-e-post:",
+  "",
+  "Leveransadress:",
+  "Kontaktperson:",
+  "Telefon:",
+  "",
+  "Övrig info:",
+  "",
+  "Vänligen bekräfta om partiet finns kvar och återkom med orderbekräftelse."
+];
+
 
       const mailto = `mailto:order@pulverborsen.se?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(bodyLines.join("\n"))}`;
 
@@ -501,6 +507,7 @@ if (mangdNum !== null && prisNum !== null) {
 
 </body>
 </html>
+
 
 
 
