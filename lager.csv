@@ -1,6 +1,6 @@
 ﻿Aktiv (ja/nej);Fabrikat;RAL/NCS;Kulör;Typ;Bäst före datum;Yt/Struktur;Mängd;Glans/matt;Plats;Pris_kr_kg;Notering;CO2_text;idnr;Företag
-ja;intrepon;NCS;5040 Y80R;Polyester TGIC Free;2019;;8,5;80-90;Eskisltuna;30;Dålig kartong;17;pb-001;jsb
-ja;intrepon;NCS ;S 0502Y;Polyester TGIC Free;2022;;19,6;30;Eskisltuna;30;dålig kartong;39;pb-002;jsb
+nej;intrepon;NCS;5040 Y80R;Polyester TGIC Free;2019;;8,5;80-90;Eskisltuna;30;Dålig kartong;17;pb-001;jsb
+nej;intrepon;NCS ;S 0502Y;Polyester TGIC Free;2022;;19,6;30;Eskisltuna;30;dålig kartong;39;pb-002;jsb
 ja;intrepon;NCS;S 2010 G60Y;Polyester TGIC Free;2021;;10,8;80-90;Eskisltuna;30;;20;pb-003;jsb
 ja;intrepon;NCS;S 2010 G60Y;Polyester TGIC Free;2021;;19,8;80-90;Eskisltuna;30;;38;pb-004;jsb
 ja;Axalta;Alesta AP;February 1 Metallic;;2018;Fin Struktur;13,8;5;Eskisltuna;20;;25;pb-005;jsb
@@ -24,4 +24,64 @@ ja;Interpon;NCS;S 5010 G70Y;Polyester TGIC Free;?;;13;85;Eskisltuna;25;;25;pb-02
 ja;Interpon;NCS;S 0502Y;Polyester TGIC Free;2019;;8,7;30;Eskisltuna;45;;16;pb-023;jsb
 ja;Axalta;;Brokk Yellow;Outdoor IP;2023;;15;90;Eskisltuna;30;;30;pb-024;jsb
 ja;Axalta;;Black FXT AQP;Outdoor IP;2021;;18;6;Eskisltuna;45;;36;pb-025;jsb
-ja;;;;;;;;;;;;;;
+ja;Dupont;RAL E2;810-M Metallic;Outdoor IP;2016;;11;Gloss visual;Eskisltuna;45;;20;pb-026;jsb
+ja;Teknos;RAL/NCS;9005GL/9000N;;2023;;20;71-85;Eskisltuna;70;;40;pb-027;jsb
+ja;Interpon;;738;Polyester TGIC Free;2023;;15;85;Eskisltuna;70;;30;pb-028;jsb
+ja;Interpon;2525 sable;copper;Polyester ;2025;Fin Struktur;11,5;;Eskisltuna;99;;20;pb-029;jsb
+ja;Axalta;;Man Black;Outdoor IP;2024;;15,7;95;Eskisltuna;75;;30;pb-030;jsb
+ja;Axalta;;Eternity 4 blck;EP;2017;;20;3 Matt smooth;Eskisltuna;64;;38;pb-031;jsb
+ja;Interpon;Pantone;287C;Polyester TGIC Free;2025;;14;80-90;Eskisltuna;60;;27;pb-032;jsb
+ja;Interpon 3010;;Cesium;Polyester TGIC Free;?;?;25;;Eskisltuna;99;;48;pb-033;jsb
+ja;Alesta AP;Ral;4007;indoor;2014;;4,5;72;Eskisltuna;65;;8;pb-034;jsb
+ja ;Axalta;;Elegance 8 Mettalic;indoor;2021;;8,9;Visual ;Eskisltuna;90;;16;pb-035;jsb
+ja;Interpon 3010;;Copper;Polyester TGIC Free;2025;;20;;Eskisltuna;99;;38;pb-036;jsb
+ja;Interpon;Antu;Gold;high dur polyester;2024;;10;20-30;Eskisltuna;105;;18;pb-037;jsb
+ja;Interpon D1036;;Gris 900;Polyester TGIC Free;2022;6+/-4;15;;Eskisltuna;90;;28;pb-038;jsb
+ja;Interpon 610;Auluminium AR/P2;Light grey met;Polyester TGIC Free;2020;;10,9;;Eskisltuna;75;;19;pb-039;jsb
+ja;Interpon 610;Vert;V386 Green;Polyester TGIC Free;2018;;10,5;;Eskisltuna;50;;20;pb-040;jsb
+ja;Interpon D1036;Pantone;287C;Polyester TGIC Free;2022;;9,7;80-90;Eskisltuna;75;;18;pb-041;jsb
+ja;Jotun;NCS;8502R;corro-coat;2020;;16,9;95;Eskisltuna;70;;31;pb-042;jsb
+ja;Interpon 620;mörk klarlack;Lasure gris 45;polyester sans tgic;2005;;11,7;100-200;Eskisltuna;45;;21;pb-043;jsb
+ja;Interpon 310 AF;Aluminium;Ikea silver r4;Polyester TGIC Free;2025;;20;;Eskisltuna;99;;38;pb-044;jsb
+ja;Interpon AS;Alu z179;Ikea silver 4;Epoxy-Polyester;2023;;12,9;88;Eskisltuna;99;;21;pb-045;jsb
+ja;Axalta IP;;Brook Yellow;Outdoor IP;2023;;20;90;Eskisltuna;80;;38;pb-046;jsb
+ja;Interpon;NCS;S400 N;Polyester TGIC Free;2020;;5,5;80;Eskisltuna;60;;10;pb-047;jsb
+ja;Interpon D1036;NCS;S6500 N;Polyester TGIC Free;2015;;22;84;Eskisltuna;54;;41;pb-048;jsb
+ja;Interpon D1036;NCS;S 1502 Y50R;Polyester TGIC Free;?;;25;89-90;Eskisltuna;67;;47;pb-048;jsb
+ja;Interpon D1036;NCS;S 0603 Y20R;Polyester TGIC Free;2021;;19;84;Eskisltuna;74;;36;pb-049;jsb
+ja; Interpon D1036;NCS;S 1502 Y50R;Polyester TGIC Free;2020;;7,5;80-90;Eskisltuna;68;;14;pb-050;jsb
+ja;Interpon D1036;NCS;S 0510G50Y;Polyester TGIC Free;2025;;5;85;Eskisltuna;94;Oöppnad;9;pb-051;jsb
+ja;Interpon D1036;NCS;S 0502Y;Polyester TGIC Free;2020;;7,7;85;Eskisltuna;80;;15;pb-052;jsb
+ja;Interpon D1036;NCS;S 8500-N;Polyester TGIC Free;2019;;13,9;30;Eskisltuna;75;;26;pb-053;jsb
+ja;Interpon D1036;NCS;S0510 G50Y;Polyester TGIC Free;2024;;19;80-90;Eskisltuna;80;;37;pb-054;jsb
+ja;Interpon D1036;NCS;S 5502 Y;Polyester TGIC Free;2019;;8;84;Eskisltuna;76;;15;pb-055;jsb
+ja;Interpon 310 AF;MW 100F;Gold Lation 6 met;Polyester sans TGIC;2006;;19,4;65-75;Eskisltuna;50;;37;pb-056;jsb
+ja ;Interpon D1036;NCS;S 6502Y;Polyester TGIC Free;2018;;15,9;84;Eskisltuna;63;;30;pb-057;jsb
+ja;Interpon D1036;NCS;S 1502 Y50R;Polyester TGIC Free;2020;;14,7;89-90;Eskisltuna;70;;27;pb-058;jsb
+ja;Interpon D1036;NCS;1080Y90R;Polyester TGIC Free;2019;;21,6;80;Eskisltuna;70;;42;pb-059;jsb
+ja;Interpon D1036;NCS;S 0603 Y20R;Polyester TGIC Free;2021;;23;84;Eskisltuna;80;;42;pb-060;jsb
+ja;Axalta;NCS; 1070-G10Y;Indoor;2017;;14;80;Eskisltuna;64;;26;pb-061;jsb
+ja;Interpon 610;NCS;S 1080 Y30R;Polyester TGIC Free;2018;;10,5;85;Eskisltuna;43;;19;pb-062;jsb
+ja;Interpon D1036;NCS;S 1080 Y20R;Polyester TGIC Free;2019;;8,5;80-90;Eskisltuna;60;;15;pb-063;jsb
+ja;Interpon D1036;NCS;1080Y90R;Polyester TGIC Free;2019;;25;80;Eskisltuna;80;Oöppnad;48;pb-064;jsb
+ja;Interpon D1036;NCS;S 2020 R90B;Polyester TGIC Free;2019;;18,8;80-90;Eskisltuna;67;;34;pb-065;jsb
+ja;Interpon D1036;RD;030 40 20 Purple;polyester Tgic free;2024;;8;25-35;Eskisltuna;100;;14;pb-066;jsb
+ja;Interpon D1036;NCS ;S 4500N;Polyester TGIC Free;2023;;12,5;84;Eskisltuna;80;;24;pb-067;jsb
+ja;Interpon D1036;NCS;S 3500N;Polyester TGIC Free;2021;;21,4;85;Eskisltuna;70;;41;pb-068;jsb
+ja ;Interpon D1036;NCS;S 5502 Y;Polyester TGIC Free;2021;;8,4;84;Eskisltuna;70;;16;pb-069;jsb
+ja;Interpon D1036;NCS;6010 G90Y;Polyester TGIC Free;2023;;25;80-90;Eskisltuna;85;;47;pb-070;jsb
+ja;Interpon D1036;NCS;S 200N;Polyester TGIC Free;2019;;8,5;84;Eskisltuna;55;;15;pb-071;jsb
+ja;Interpon 610;NCS;S 1005-Y50R;Polyester TGIC Free;2018;;12;80-90;Eskisltuna;46;;23;pb-072;jsb
+ja;Interpon D1036;NCS;S 0500N;Polyester TGIC Free;2021;;23,8;85;Eskisltuna;60;;45;pb-073;jsb
+ja;Interpon 610;NCS;S 6020 Y90R;Polyester TGIC Free;2018;;9;30;Eskisltuna;40;;16;pb-074;jsb
+ja;Interpon D1036;NCS;0520 R20B;Polyester TGIC Free;2022;;8,5;25-25;Eskisltuna;53;;16;pb-075;jsb
+ja;Interpon D1036;NCS;S 1030 B90G;Polyester TGIC Free;2022;;8;25-35;Eskisltuna;60;;15;pb-076;jsb
+ja;Axalta AP;NCS;S 7000-N;Indoor;2022;;20;80;Eskisltuna;55;;38;pb-078;jsb
+ja;Axalta AP;NCS;S 7000-N;Indoor;2022;;19;80;Eskisltuna;55;;37;pb-079;jsb
+ja;Axalta AP;NCS;S 7000-N;indoor;2022;;20;80;Eskisltuna;55;Oöppnad;38;pb-080;jsb
+ja;Axalta AP;NCS;S 7000-N;indoor;2022;;17;80;Eskisltuna;55;;35;pb-081;jsb
+ja;Axalta AP;NCS;S 7000-N;indoor;2022;;20;80;Eskisltuna;55;Oöppnad;38;pb-082;jsb
+ja;Interpon D1036;NCS;2010Y50R;Polyester TGIC Free;2023;;25;85;Eskisltuna;60;Oöppnad;49;pb-083;jsb
+ja;Interpon D1036;NCS;S 1500 N;Polyester TGIC Free;2020;;16,5;84;Eskisltuna;48;;31;pb-084;jsb
+ja;Interpon D1036;NCS;S 8000-N;Polyester TGIC Free;2016;;8;85;Eskisltuna;40;;14;pb-085;jsb
+ja;Interpon D1036;NCS;S 7502B;Polyester TGIC Free;2019;;17;84;Eskisltuna;45;;22;pb-086;jsb
